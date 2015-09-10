@@ -32,3 +32,27 @@ var obj = Object.create(null);
 obj.a = 1;
 console.log(obj.hasOwnProperty('a')); //TypeError: obj.hasOwnProperty is not a function
 ```
+#Object.prototype.propertyIsEnumerable - ignores prototype chain
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/propertyIsEnumerable
+```javascript
+var o = {};
+Object.defineProperty(o, 'p1', {enumerable : true});
+Object.defineProperty(o, 'p2', {enumerable : false});
+var o1 = Object.create(o);
+Object.defineProperty(o1, 'p3', {enumerable : true});
+Object.defineProperty(o1, 'p4', {enumerable : false});
+
+console.log(o1.propertyIsEnumerable('p1')); //false
+console.log(o1.propertyIsEnumerable('p2')); //false
+console.log(o1.propertyIsEnumerable('p3')); //true
+console.log(o1.propertyIsEnumerable('p4')); //false
+console.log(o1.propertyIsEnumerable('p5')); //false
+```
+## Detection schema
+
+| _____________            | in Operator   | hasOwnProperty  | propertyIsEnumerable  |
+| -------------------------| ------------- |-----------------|-----------------------|
+| Own Enumerable           | true          |true             |true                   |
+| Own Not-Enumerable       | true          |true             |false                  |
+| Inherited Enumerable     | true          |false            |false                  |
+| Inherited Not-enumerable | true          |false            |false                  |
