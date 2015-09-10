@@ -37,3 +37,11 @@ for(var i = 0; i < objectKeys.length; i++){
 }
 ```
 
+## Detection schema
+
+| _____________            | for..in       | Object.keys     | getOwnPropertyNames   |
+| -------------------------| ------------- |-----------------|-----------------------|
+| Own Enumerable           | true          |true             |true                   |
+| Own Not-Enumerable       | false         |false            |true                   |
+| Inherited Enumerable     | true          |false            |false                  |
+| Inherited Not-enumerable | false         |false            |false                  |
