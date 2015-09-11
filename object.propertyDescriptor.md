@@ -7,9 +7,9 @@ var o = {
 }
 Object.defineProperty(o, 'p', {
     value : 5, // default is undefined
-    writable : false, // the value can be changed, default is true
-    configurable : false, // the property can be deleted or descriptor modified, default is true
-    enumerable : true, // if it's appears in enumeration, default is false!
+    writable : false, // the value can be changed, default is FALSE
+    configurable : false, // the property can be deleted or descriptor modified, default is FALSE
+    enumerable : true, // if it's appears in enumeration, default is FALSE
 });
 
 Object.defineProperty(o, 'p1', {
