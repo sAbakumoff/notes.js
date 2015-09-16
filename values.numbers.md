@@ -40,3 +40,18 @@ console.log(isInteger(12.21)); // true
 
 # Bitwise operations
 only for 32-bit signed integers, use a | 0 to get such an integer
+
+# Not a number
+```javascript
+var a = 2 / 'abc';      // NaN
+console.log(typeof a === 'number')  // true
+console.log(a !== a); // true <- use it for checks for NaN
+```
+
+# Infinity
+```javascript
+var a = 1 / 0, b = -1/0;
+console.log(a); // Infinity
+console.log(b); // -Infinity
+console.log(a === b); // false
+```
