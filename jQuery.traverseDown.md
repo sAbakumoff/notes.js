@@ -22,4 +22,7 @@ console.log("# of LI's on all the levels is", $('#list-1').find('li').length /*6
 
 // passing a context to the 2nd argument of $ sets the element to search within
 console.log("# of LI's on starting under list-3 is", $('li', $('#list-3') ).length /* 2 */);
+
+// contents() also returns text and comments nodes as well as hmtl elements.
+console.log($('li:first').contents().get()); // ['Business requirements', ol#list-2]
 ```
